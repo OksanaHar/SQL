@@ -1,0 +1,8 @@
+SELECT fname, lname, patronus
+FROM characters
+WHERE patronus is NOT NULL;
+
+SELECT lname
+FROM characters
+WHERE lname LIKE '%e';
+
