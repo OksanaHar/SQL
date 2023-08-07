@@ -1,8 +1,98 @@
-SELECT fname, lname, patronus
+1. SELECT fname, lname, patronus
 FROM characters
 WHERE patronus is NOT NULL;
-
-SELECT lname
+2. SELECT lname
 FROM characters
 WHERE lname LIKE '%e';
+3. SELECT SUM(age)
+FROM characters;
+
+4. SELECT fname, lname, age
+FROM characters
+ORDER BY age DESC;
+
+5. SELECT fname, age
+FROM characters
+WHERE Age BETWEEN 50 AND 100;
+
+6. SELECT DISTINCT age
+FROM characters;
+
+7. SELECT * from characters
+WHERE faculty= 'Gryffindor' AND age>30;
+
+8. SELECT DISTINCT faculty
+FROM characters
+LIMIT 3;
+
+9. SELECT fname
+FROM characters
+WHERE fname LIKE 'H____' OR fname LIKE 'L%';
+
+10. SELECT AVG(age)
+FROM characters;
+
+11. DELETE FROM characters
+WHERE char_id=11;
+
+12. SELECT lname
+FROM characters
+WHERE lname LIKE '%a%';
+
+13. SELECT fname AS 'Half-Blood Prince'
+FROM characters
+WHERE fname= 'Severus'
+
+14. SELECT char_id, patronus
+FROM characters
+WHERE patronus IS NOT NULL AND NOT patronus='Unknown'
+ORDER BY patronus;
+
+15. SELECT fname, lname
+FROM characters
+WHERE lname IN ('Crabbe','Granger','Diggory') 
+
+16. SELECT MIN(age)
+FROM characters;
+
+17. SELECT fname FROM characters
+UNION
+SELECT book_name FROM library;
+
+18. SELECT count(char_id), faculty
+FROM characters
+GROUP BY faculty
+HAVING count(char_id)>1;
+
+19. SELECT fname, lname,
+CASE
+    WHEN faculty ='Gryffindor' then 'Godric'
+    WHEN faculty ='Slytherin' then 'Salazar'
+    WHEN faculty ='Ravenclaw' then 'Rowena'
+    WHEN faculty ='Hufflepuff' then 'Helga'
+    ELSE 'Muggle'
+END AS Founders
+FROM characters;
+
+20. SELECT lname
+FROM characters
+WHERE NOT lname REGEXP '^[HLS]';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
